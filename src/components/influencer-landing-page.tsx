@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Instagram, Twitter, Youtube } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 export function InfluencerLandingPage() {
   return (
@@ -37,14 +38,27 @@ export function InfluencerLandingPage() {
         <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-gradient-to-r from-purple-50 via-indigo-50 to-blue-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900">
           <div className="container px-4 md:px-6 mx-auto">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px] items-center">
-              <Image
-                alt="Influencer Hero Image"
-                className="mx-auto aspect-video overflow-hidden rounded-2xl object-cover object-center sm:w-full lg:order-last shadow-2xl ring-4 ring-purple-500/20"
-                height="550"
-                src="/profile.png?height=550&width=800"
-                width="800"
-              />
-              <div className="flex flex-col justify-center space-y-4">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <Image
+                  alt="Influencer Hero Image"
+                  className="mx-auto aspect-video overflow-hidden rounded-2xl object-cover object-center sm:w-full lg:order-last shadow-2xl ring-4 ring-purple-500/20"
+                  height="550"
+                  src="/profile.png?height=550&width=800"
+                  width="800"
+                />
+              </motion.div>
+              <motion.div
+                className="flex flex-col justify-center space-y-4"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 <div className="space-y-2">
                   <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">
                     Hi, I&apos;m CrusaderCrest
@@ -67,11 +81,18 @@ export function InfluencerLandingPage() {
                     Learn More
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900" id="about">
+        <motion.section
+          className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900"
+          id="about"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <div className="container px-4 md:px-6 mx-auto">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -82,48 +103,58 @@ export function InfluencerLandingPage() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900" id="featured">
           <div className="container px-4 md:px-6 mx-auto">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">Featured Content</h2>
+            <motion.h2
+              className="text-3xl font-bold tracking-tight sm:text-5xl mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Featured Content
+            </motion.h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <div className="flex flex-col items-center space-y-4 bg-white/80 dark:bg-gray-800/80 p-6 rounded-2xl shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1">
-                <Image
-                  alt="Featured Content 1"
-                  className="aspect-video overflow-hidden rounded-xl object-cover object-center w-full"
-                  height="200"
-                  src="/profile.png?height=200&width=300"
-                  width="300"
-                />
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">10 Tips for a Healthier Lifestyle</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-center">Discover simple ways to improve your daily routine and boost your wellbeing.</p>
-              </div>
-              <div className="flex flex-col items-center space-y-4 bg-white/80 dark:bg-gray-800/80 p-6 rounded-2xl shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1">
-                <Image
-                  alt="Featured Content 2"
-                  className="aspect-video overflow-hidden rounded-xl object-cover object-center w-full"
-                  height="200"
-                  src="/profile.png?height=200&width=300"
-                  width="300"
-                />
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">My Favorite Productivity Hacks</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-center">Learn the techniques I use to stay focused and get more done in less time.</p>
-              </div>
-              <div className="flex flex-col items-center space-y-4 bg-white/80 dark:bg-gray-800/80 p-6 rounded-2xl shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1">
-                <Image
-                  alt="Featured Content 3"
-                  className="aspect-video overflow-hidden rounded-xl object-cover object-center w-full"
-                  height="200"
-                  src="/profile.png?height=200&width=300"
-                  width="300"
-                />
-                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">Behind the Scenes: My Creative Process</h3>
-                <p className="text-gray-600 dark:text-gray-400 text-center">Get an inside look at how I create content and manage my online presence.</p>
-              </div>
+              {[1, 2, 3].map((index) => (
+                <motion.div
+                  key={index}
+                  className="flex flex-col items-center space-y-4 bg-white/80 dark:bg-gray-800/80 p-6 rounded-2xl shadow-xl transition-all hover:shadow-2xl hover:-translate-y-1"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <Image
+                    alt={`Featured Content ${index}`}
+                    className="aspect-video overflow-hidden rounded-xl object-cover object-center w-full"
+                    height="200"
+                    src="/profile.png?height=200&width=300"
+                    width="300"
+                  />
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">
+                    {index === 1 && "10 Tips for a Healthier Lifestyle"}
+                    {index === 2 && "My Favorite Productivity Hacks"}
+                    {index === 3 && "Behind the Scenes: My Creative Process"}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-center">
+                    {index === 1 && "Discover simple ways to improve your daily routine and boost your wellbeing."}
+                    {index === 2 && "Learn the techniques I use to stay focused and get more done in less time."}
+                    {index === 3 && "Get an inside look at how I create content and manage my online presence."}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900" id="contact">
+        <motion.section
+          className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900"
+          id="contact"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <div className="container px-4 md:px-6 mx-auto">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -161,7 +192,7 @@ export function InfluencerLandingPage() {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
       </main>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-gray-200 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md">
         <p className="text-xs text-gray-600 dark:text-gray-400">© 2023 CrusaderCrest. All rights reserved.</p>
