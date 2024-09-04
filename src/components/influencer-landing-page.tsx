@@ -47,7 +47,7 @@ export function InfluencerLandingPage() {
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Hi, I&aposm CrusaderCrest
+                    Hi, I&apos;m CrusaderCrest
                   </h1>
                   <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
                     Lifestyle influencer, content creator, and digital entrepreneur. Join me on my journey to inspire and empower.
@@ -77,7 +77,7 @@ export function InfluencerLandingPage() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">About Me</h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  I&aposm passionate about creating content that inspires and empowers people to live their best lives. With a focus on lifestyle, wellness, and personal development, I share my experiences and insights to help others on their journey.
+                  I&apos;m passionate about creating content that inspires and empowers people to live their best lives. With a focus on lifestyle, wellness, and personal development, I share my experiences and insights to help others on their journey.
                 </p>
               </div>
             </div>
